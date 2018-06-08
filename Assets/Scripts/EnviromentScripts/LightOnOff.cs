@@ -20,17 +20,9 @@ public class LightOnOff : NetworkBehaviour {
         timeLeft -= Time.deltaTime;
         if (timeLeft <= 0)
         {
-            if (onOff == false)
-            {
-                onOff = !onOff;
-                timeLeft = Random.Range(minTime, maxTime);
-            }
-            else
-            {
-                onOff = !onOff;
-                gameObject.GetComponent<Light>().enabled = onOff;
-                timeLeft = Random.Range(minTime, maxTime);
-            }
+            onOff = !onOff;
+            gameObject.GetComponent<Light>().enabled = onOff;
+            timeLeft = Random.Range(minTime, maxTime);
         }
     }
 }

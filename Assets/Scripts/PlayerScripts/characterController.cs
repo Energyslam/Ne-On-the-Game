@@ -28,6 +28,7 @@ public class characterController : NetworkBehaviour
     public bool pickUpSpeed = false;
     public AudioSource lightsaberon;
     public AudioSource bulletform;
+    private int points;
 
     void Start()
     {
@@ -77,6 +78,11 @@ public class characterController : NetworkBehaviour
         straffe *= Time.deltaTime;
 
         transform.Translate(straffe, 0, translation);
+
+        if(kills >= points)
+        {
+            canvas.GetComponent<AnnounceWinner>().Announce(this.gameObject);
+        }
 
         if (onGround)
         {

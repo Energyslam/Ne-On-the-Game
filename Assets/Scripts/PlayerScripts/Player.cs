@@ -18,6 +18,7 @@ public class Player : NetworkBehaviour
     public int thresholdtop;
     public AudioSource damage;
     public AudioSource death;
+    GameObject playerCanvas;
 
     //Checking if the players are dead
     [SyncVar]
